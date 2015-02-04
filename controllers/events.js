@@ -64,17 +64,25 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 50 letters.');
   }
-  if(request.body.year > 2016 || request.body.year < 2015){
+  /*
+  if(request.body.image.substring(0, 6) !== 'http://' && request.body.image.substring(0, 7) !== 'https://'){
+    contextData.errors.push('Image URL must begin with "http://" or "https://"');
+  }
+  */
+  if(request.body.year > 2016 || request.body.year < 2015 || isNaN(request.body.year)){
     contextData.errors.push('The year must be 2015 or 2016');
   }
-  if(request.body.month > 11 || request.body.month < 0){
+  if(request.body.month > 11 || request.body.month < 0 || isNaN(request.body.month)){
     contextData.errors.push('Must select a month');
   }
-  if(request.body.hour > 23 || request.body.hour < 0){
+  if(request.body.day > 31 || request.body.day < 1 || isNaN(request.body.day)){
+    contextData.errors.push('Must select a day');
+  }
+  if(request.body.hour > 23 || request.body.hour < 0 || isNaN(request.body.hour)){
     contextData.errors.push('Must select an hour');
   }
   /*
-  if((request.body.minute !== 30) && (request.body.minute !== 0)){
+  if((request.body.minute !== 30) && (request.body.minute !== 0) || isNaN(request.body.minute)){
     contextData.errors.push('Must select a minute');
   }*/
 

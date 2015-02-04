@@ -61,15 +61,28 @@ function saveEvent(request, response){
     contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
   
-  if (validator.isLength(request.body.locationx, 5, 50) === false) {
+  if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 50 letters.');
   }
+  if(request.body.year > 2016 || request.body.year < 2015){
+    contextData.errors.push('The year must be 2015 or 2016');
+  }
+  if(request.body.month > 11 || request.body.month < 0){
+    contextData.errors.push('Must select a month');
+  }
+  if(request.body.hour > 23 || request.body.hour < 0){
+    contextData.errors.push('Must select an hour');
+  }
+  /*
+  if((request.body.minute !== 30) && (request.body.minute !== 0)){
+    contextData.errors.push('Must select a minute');
+  }*/
 
 
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
-      location: request.body.locationx,
+      location: request.body.location,
       image: request.body.image,
       date: new Date(),
       attending: []

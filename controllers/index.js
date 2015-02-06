@@ -11,6 +11,7 @@ function index (request, response) {
     'title': 'MGT 656',
     'tagline': 'You are doomed (just kidding).',
     'events': []
+    //this is legacy code below
     // 'events': events.all
   };
   for (var i=0; i < events.all.length; i ++)

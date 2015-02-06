@@ -90,7 +90,7 @@ function saveEvent(request, response){
     contextData.errors.push('Must select a minute');
   }*/
   
-  var eventyear   = request.body.year - 1900;
+  var eventyear   = request.body.year;
   var eventmonth  = request.body.month;
   var eventday    = request.body.day;
   var eventhour   = request.body.hour;
@@ -105,6 +105,7 @@ function saveEvent(request, response){
 
   if (contextData.errors.length === 0) {
     var newEvent = {
+      id: events.all.length + 1,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,

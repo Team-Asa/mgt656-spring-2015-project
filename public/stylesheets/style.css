@@ -10,3 +10,8 @@ a {
 .form-errors {
 	color: red;
 }
+head {
+  background: url("http://imgur.com/S6bB8wr");
+      background-size: cover;
+      background-position: center;
+}

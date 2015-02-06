@@ -64,11 +64,15 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 50 letters.');
   }
-  /*
-  if(request.body.image.substring(0, 6) !== 'http://' && request.body.image.substring(0, 7) !== 'https://'){
+  
+  if(request.body.image.indexOf('http://') === -1 && request.body.image.indexOf('https://') === -1){
     contextData.errors.push('Image URL must begin with "http://" or "https://"');
   }
-  */
+  
+  if(request.body.image.indexOf('.png') === -1 && request.body.image.indexOf('.gif') === -1){
+    contextData.errors.push('Image URL must begin with "http://" or "https://"');
+  }
+  
   if(request.body.year > 2016 || request.body.year < 2015 || isNaN(request.body.year)){
     contextData.errors.push('The year must be 2015 or 2016');
   }
@@ -85,14 +89,26 @@ function saveEvent(request, response){
   if((request.body.minute !== 30) && (request.body.minute !== 0) || isNaN(request.body.minute)){
     contextData.errors.push('Must select a minute');
   }*/
-
+  
+  var eventyear   = request.body.year - 1900;
+  var eventmonth  = request.body.month;
+  var eventday    = request.body.day;
+  var eventhour   = request.body.hour;
+  var eventminute = request.body.minute;
+   /*
+  contextData.errors.push(eventyear);
+  contextData.errors.push(eventmonth);
+  contextData.errors.push(eventday);
+  contextData.errors.push(eventhour);
+  contextData.errors.push(eventminute);
+  */
 
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(), //new Date(year, month, day, hours, minutes, seconds, milliseconds)
+      date: new Date(eventyear, eventmonth, eventday, eventhour, eventminute, 0, 0),
       attending: []
     };
     events.all.push(newEvent);

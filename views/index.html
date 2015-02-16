@@ -21,8 +21,6 @@
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
-  <p>test</p>
-  <p>anoj</p>
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
@@ -37,7 +35,7 @@
 var pageVariations = [
   function() {},  // Original: Do nothing. This will render the default HTML.
   function() {    // Variation 1: add RSVP text
-    $( 'li.event-title' ).prepend( 'RSVP ' );
+    $( 'li.event' ).prepend( 'RSVP ' );
   }
 ];
  

@@ -2,30 +2,24 @@
 
 {% block header %}
 
-
   <header>
-    <img src="http://i.imgur.com/j8H9l6i.png" width="950" height="350" id="logo">
-    <h1>{{ title }} FTW</h1>
+    <img src="http://i.imgur.com/h1UMGkx.png" align="left" width="100" height="50" id="logo">
+    <img src="http://i.imgur.com/h1UMGkx.png" align="right" width="100" height="50" id="logo">
+    <h1>EventDim</h1>
+
   </header>
 {% endblock %}
 
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
-  <p>Here is our list of events</p>
-  <div style="border: 1px solid black">
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About us</a></li>
+    <li><a href="/events">Events</a></li>
+    <li><a id="new" href="/events/new">Create an Event</a></li>
+  </ul>
+  <div>
     {% include "fragments/events-list.html" %}
   </div>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>test</p>
-  <p>anoj</p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
   <!-- Load the Content Experiment JavaScript API client for the experiment -->
 <script src="//www.google-analytics.com/cx/api.js?experiment=w_AqhdHtSTO6EUjP7xWAWg"></script>
  

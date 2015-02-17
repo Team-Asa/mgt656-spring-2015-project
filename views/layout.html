@@ -14,14 +14,56 @@
   ga('send', 'pageview');
 
 </script>
+<style>
+@font-face {
+    font-family: Yale Font;
+    src: url(Yale_typeface/YaleNew-Roman.otf)
+}
+body {
+      text-align: center;
+      background: url('http://www.fosterandpartners.com/media/1709754/img1.jpg');
+      background-size: cover;
+      color: rgba(15,77,146,1);
+}
+body{
+  font-family: Yale Font;
+}
+h1{
+  padding: 10px 10px 10px 10px;
+  color: white;
+  font-size: 76;
+}
+li{
+  display:inline;
+        padding: 50px;
+        
+}
+ul{
+      display:inline-block;
+      background: rgba(255,255,255,0.5);
+      width: 100%;
+}
+a {
+      color: rgba(15,77,146,1);
+      text-decoration: none;
+      width: 100%;
+    }
+a:hover {
+      color: black;
+    }
+footer {
+  background: rgba(255,255,255,0.5);
+  padding-top: 30px;
+}
+</style>
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header><h1>EventDim</h1></header>
     {% endblock %}
 
     {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
+  
     {% endblock %}
 
     {% block footer %}

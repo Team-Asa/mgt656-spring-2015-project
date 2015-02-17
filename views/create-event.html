@@ -1,6 +1,14 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
+<Menu>
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About us</a></li>
+    <li><a href="/events">Events</a></li>
+    <li><a id="new" href="/events/new">Create an Event</a></li>
+  </ul>
+  </menu>
 
   {% if errors %}
     <div class="form-errors">

@@ -1,7 +1,16 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <h1>About Us</h1>
+
+  <head><h1>About Us</h1></head>
+  <Menu>
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About us</a></li>
+    <li><a href="/events">Events</a></li>
+    <li><a id="new" href="/events/new">Create an Event</a></li>
+  </ul>
+  </menu>
   <p>We are Team ASA. Our hobbies include, eating, sleeping, and building killer websites.</p>
   <h2>Team Members</h2>
   <table>

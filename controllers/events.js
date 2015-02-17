@@ -85,23 +85,12 @@ function saveEvent(request, response){
   if(request.body.hour > 23 || request.body.hour < 0 || isNaN(request.body.hour)){
     contextData.errors.push('Must select an hour');
   }
-  /*
-  if((request.body.minute !== 30) && (request.body.minute !== 0) || isNaN(request.body.minute)){
-    contextData.errors.push('Must select a minute');
-  }*/
   
   var eventyear   = request.body.year;
   var eventmonth  = request.body.month;
   var eventday    = request.body.day;
   var eventhour   = request.body.hour;
   var eventminute = request.body.minute;
-   /*
-  contextData.errors.push(eventyear);
-  contextData.errors.push(eventmonth);
-  contextData.errors.push(eventday);
-  contextData.errors.push(eventhour);
-  contextData.errors.push(eventminute);
-  */
   
   var newid = events.all.length + 1;
 
@@ -115,7 +104,6 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    //response.redirect('/events');
     response.redirect('/events/' +newid);
   }else{
     response.render('create-event.html', contextData);

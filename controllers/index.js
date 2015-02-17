@@ -8,7 +8,7 @@ var events = require('../models/events');
 function index (request, response) {
   var now = new Date();
   var contextData = {
-    'title': 'MGT 656',
+    'title': 'ASA Events',
     'tagline': 'You are doomed (just kidding).',
     'events': []
     //this is legacy code below

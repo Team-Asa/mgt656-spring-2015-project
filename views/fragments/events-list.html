@@ -3,6 +3,7 @@
   {% for event in events %}
     <li class = "event" id = "event-{{event.id}}">
       <a href="/events/{{event.id}}">{{event.title}}</a>
+      <img src="{{event.image}}" id="image" width="200">
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.
     </li>

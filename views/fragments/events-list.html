@@ -1,7 +1,7 @@
 
 <ul>
   {% for event in events %}
-    <li class = "event" id = "event-{{event.id}}"></br>
+    <li style ="float:left; width:33%; padding: 0px 0px 0px 0px;" class = "event" id = "event-{{event.id}}"></br>
       <a href="/events/{{event.id}}">{{event.title}}</a></br>
       <img src="{{event.image}}" id="image" width="200"></br>
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time></br>

@@ -70,7 +70,7 @@ function saveEvent(request, response){
   }
   
   if(request.body.image.indexOf('.png') === -1 && request.body.image.indexOf('.gif') === -1){
-    contextData.errors.push('Image URL must begin with "http://" or "https://"');
+    contextData.errors.push('Image filetype must be .png or .gif');
   }
   
   if(request.body.year > 2016 || request.body.year < 2015 || isNaN(request.body.year)){

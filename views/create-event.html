@@ -4,13 +4,14 @@
 {% block mainContent %}
 
 
-
+<body>
 <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about">About us</a></li>
     <li><a href="/events">Events</a></li>
     <li><a id="new" href="/events/new">Create an Event</a></li>
   </ul>
+</body>    
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
@@ -21,7 +22,7 @@
       </ul>
     </div>
   {% endif %}
-    
+
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title" id="title">

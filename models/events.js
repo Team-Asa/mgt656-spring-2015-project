@@ -19,7 +19,7 @@ var allEvents = [
     id: 1,
     title: 'BBQ party for hackers and nerds',
     date:   new Date(2015, 8, 1, 19, 0, 0),
-    image: 'http://demolitionparts.com/wp-content/uploads/IMG_9788LR.jpg',
+    image: 'http://stream1.gifsoup.com/view5/2809841/russian-b-b-q-o.gif',
     location: 'Miles\' house',
     attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
   },
